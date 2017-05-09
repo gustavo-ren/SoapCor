@@ -21,11 +21,12 @@ public class SoapCor {
     public static void main(String[] args) {
         CResultado res = calcPrazo("04014", "13604228", "68906848");
         
-        List <CServico> lista=res.getServicos().getCServico();
+        List <CServico> lista=res.getServicos().getCServico();//Armazena o resultado na lista.
         
         for(CServico cs:lista){
             if(cs.getErro().equals(""))
-                System.out.println("Prazo de entrega é: "+cs.getPrazoEntrega());
+                System.out.println("Prazo de entrega é: "+cs.getPrazoEntrega());//Percorre o XML gerado para encontrar
+                                                                                //o prazo de entrega
             else
                 System.out.println(cs.getErro());
         }
